@@ -12,16 +12,16 @@ const MediumCardItem: FC<ICardDataSingleMedium> = (props:ICardDataSingleMedium) 
             <div className='h-auto relative'>
                 <div className='absolute flex flex-col w-full inset-x-0 bottom-0 pl-3  bg-white   '>
                     <div className=''>
-                        <a href="#" className='mr-5  text-xs uppercase'> { props.cardsMedium.title} </a>
+                        <a href="#" className='mr-5  text-xs uppercase'> { props.mediumcard.title} </a>
                     </div>
 
-                    <a href="#" className=' text-xl font-medium font-sans '> {props.cardsMedium.description} </a>
+                    <a href="#" className=' text-xl font-medium font-sans '> {props.mediumcard.description} </a>
                     <div className='flex flex-row mb-2'>
                         <img src='../menuBlack.svg' alt="" className='w-4 h-4 aling-center' />
                         <a href="" className='uppercase ml-2 text-xs'>Read</a>
                     </div>
                 </div>
-                <img src={props.cardsMedium.image} alt="" className='' />
+                <img src={props.mediumcard.image} alt="" className='' />
             </div>
 
         </div>

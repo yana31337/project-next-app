@@ -6,43 +6,45 @@ import { CardLargeService, CardMediumService, CardService } from "@/services/car
 import { GetServerSideProps, NextPage } from "next";
 
 export type CardData = {
-  cardsMedium: ICardMedium[],
-  cards: ICard[],
-  cardsLarge: ICardLarge[]
+  mediumcard: ICardMedium[],
+  smallcard: ICard[],
+  largecard: ICardLarge[],
+  card: ICard[]
 }
 
-const HomePage: NextPage<CardData> = (props:CardData) => {
-  return <Home cards={props.cards} cardsMedium={props.cardsMedium} cardsLarge={props.cardsLarge}/>
-  // 
-
+const HomePage: NextPage<CardData> = (props: ICardData) => {
+  return <Home 
+  card={props.card}
+  //  mediumcard={props.card.mediumcard} smallcard={props.card.smallcard} largecard={props.card.largecard}  // mediumcard={props.mediumcard} largecard={props.largecard}
+  />
 }
 
 export const getServerSideProps: GetServerSideProps<ICardData> = async () => {
-  const cards = await CardService.getAllSmall()
+  const card = await CardService.getAllSmall()
   return {
     props: {
-      cards
+      card
     }
   }
 }
 
-export const getServerSidePropsMedium: GetServerSideProps<ICardDataMedium> = async () => {
-  const cardsMedium = await CardMediumService.getAllMedium()
-  return {
-    props: {
-      cardsMedium
-    }
-  }
-}
+// export const getServerSidePropsMedium: GetServerSideProps<ICardDataMedium> = async () => {
+//   const cardsMedium = await CardMediumService.getAllMedium()
+//   return {
+//     props: {
+//       cardsMedium
+//     }
+//   }
+// }
 
-export const getServerSidePropsLarge: GetServerSideProps<ICardDataLarge> = async () => {
-  const cardsLarge = await CardLargeService.getAllLarge()
-  return {
-    props: {
-      cardsLarge
-    }
-  }
-}
+// export const getServerSidePropsLarge: GetServerSideProps<ICardDataLarge> = async () => {
+//   const cardsLarge = await CardLargeService.getAllLarge()
+//   return {
+//     props: {
+//       cardsLarge
+//     }
+//   }
+// }
 
 export default HomePage
 

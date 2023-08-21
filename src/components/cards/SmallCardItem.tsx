@@ -1,10 +1,12 @@
-import { ICardDataSingle } from "@/interfaces/card.interfaces"
+import { ICardData, ICardDataSingle } from "@/interfaces/card.interfaces"
 import { FC } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { CardService } from "@/services/card.service"
+import { GetServerSideProps } from "next"
 
 
-const SmallCardItem: FC<ICardDataSingle> = ({card}) => {
+const SmallCardItem: FC<ICardDataSingle> = ({ card }) => {
   return (
     <div className='flex flex-row mb-5'>
       {/* <img src='' alt='Image' className='h-24 w-24 mr-5' /> */}
@@ -19,5 +21,13 @@ const SmallCardItem: FC<ICardDataSingle> = ({card}) => {
   )
 }
 
-export default SmallCardItem
+export default SmallCardItem;
 
+// export const getServerSideProps: GetServerSideProps<ICardData> = async () => {
+//   const cards = await CardService.getAllSmall()
+//   return {
+//     props: {
+//       cards
+//     }
+//   }
+// } 

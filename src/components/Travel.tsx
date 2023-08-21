@@ -1,4 +1,3 @@
-import { ICard } from "@/interfaces/card.interfaces"
 import LargeCardItem from "./cards/LargeCardItem"
 import MediumCardItem from "./cards/MediumCardItem"
 import SmallCardItem from "./cards/SmallCardItem"
@@ -12,7 +11,6 @@ const Travel: FC<CardData> = (props: CardData) => {
         <div className='bg-black '>
 
             <div className=' text-white pb-10 relative  h-auto '>
-                {/* <img src={national} alt="" className='absolute  w-full ' /> */}
 
                 <div className='absolute grid grid-cols-12 gap-x-10 col-start-auto max-w-5xl h-4/5 text-white pb-14  ml-52'>
 
@@ -24,12 +22,12 @@ const Travel: FC<CardData> = (props: CardData) => {
 
                     <div className='col-span-8'>
 
-                        <LargeCardItem cardsLarge={props.cards[0]} />
+                        <LargeCardItem largecard={props.card.cards.largecard[0]} />
 
-                        {/* <div className='flex flex-row justify-between  mt-10'>
-                            <MediumCardItem cardsMedium={props.cards[0]} />
-                            <MediumCardItem cardsMedium={props.cards[1]} />
-                        </div> */}
+                        <div className='flex flex-row justify-between  mt-10'>
+                            <MediumCardItem mediumcard={props.card.cards.mediumcard[0]} /> 
+                            <MediumCardItem mediumcard={props.card.cards.mediumcard[1]} />
+                        </div>
 
                     </div>
 
@@ -41,7 +39,7 @@ const Travel: FC<CardData> = (props: CardData) => {
                         </div>
 
                         <div >
-                            {props.cards.map(card => <SmallCardItem key={card.id} card={card} />)}
+                            {props.card.cards.smallcard.map(card => <SmallCardItem key={card.id} card={card} />)}
                         </div>
 
                         <div className=''>
@@ -50,10 +48,7 @@ const Travel: FC<CardData> = (props: CardData) => {
                     </div>
 
                 </div>
-                <Image src='/national.jpg' alt="" width={1440} height={500} className=""/>
-                {/* <img
-                    src={national}
-                    alt="" className='w-full' /> */}
+                <Image src='/national.jpg' alt="" width={1440} height={500} className="" />
                 <div className='bg-black h-40 '></div>
 
             </div>

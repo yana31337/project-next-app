@@ -36,7 +36,7 @@ const LatestStoties: FC<CardData> = (props: CardData) => {
                 </div>
 
                 <div>
-                    {props.cards.map(card => <SmallCardItem key={card.id} card={card} />)}
+                    {props.card.cards.smallcard.map(card => <SmallCardItem key={card.id} card={card} />)}
                 </div>
 
                 <div>
@@ -47,17 +47,12 @@ const LatestStoties: FC<CardData> = (props: CardData) => {
 
             <div className='col-span-8 '>
 
-
-                <LargeCardItem cardsLarge={props.cards[0]} />
-
-
-
+                <LargeCardItem largecard={props.card.cards.largecard[0]} />
 
                 <div className='flex flex-row justify-between h-1/2 mt-10'>
 
-                    <MediumCardItem cardsMedium={props.cards[0]} />
-                    <MediumCardItem cardsMedium={props.cards[1]} />
-                    {/* <MediumCardItem   cardsMedium={props.cardsMedium[1]} /> */}
+                    <MediumCardItem mediumcard={props.card.cards.mediumcard[0]} />
+                    <MediumCardItem mediumcard={props.card.cards.mediumcard[1]} />
 
                 </div>
 

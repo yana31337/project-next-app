@@ -5,12 +5,12 @@ export interface ICardMedium {
     image: string
 }
 
-
 export interface ICardDataMedium {
-    cardsMedium: ICardMedium[]
+    mediumcard: ICardMedium[]
 }
 
 export interface ICardDataSingleMedium {
-    cardsMedium: ICardMedium
+    mediumcard: ICardMedium
+    // card: ICardMedium
 }
 

@@ -43,9 +43,15 @@ const Home: FC<CardData> = (props:CardData) => {
         </Head>
         <Layout>
             <main className=" max-h-max">
-                <LatestStoties cards={props.cards}  cardsMedium={props.cardsMedium} cardsLarge={props.cards}/>
+                <LatestStoties 
+                card={props.card}
+                // smallcard={props.smallcard}  mediumcard={props.mediumcard} largecard={props.largecard}
+                />
                 <Movies />
-                <Travel cards={props.cards}  cardsMedium={props.cardsMedium} cardsLarge={props.cards}/>
+                <Travel 
+                card={props.card}
+                // smallcard={props.smallcard}  mediumcard={props.mediumcard} largecard={props.largecard}
+                />
                 <Pictures />
                 <Mission />
                 <SingUp />

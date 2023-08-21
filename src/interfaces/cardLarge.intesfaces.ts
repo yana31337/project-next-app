@@ -1,4 +1,5 @@
 export interface ICardLarge {
+    largecard: any
     id: number,
     title: string,
     description: string,
@@ -7,10 +8,10 @@ export interface ICardLarge {
 
 
 export interface ICardDataLarge {
-    cardsLarge: ICardLarge[]
+    largecard: ICardLarge[]
 }
 
 export interface ICardDataSingleLarge {
-    cardsLarge: ICardLarge
+    largecard: ICardLarge
 }
 
